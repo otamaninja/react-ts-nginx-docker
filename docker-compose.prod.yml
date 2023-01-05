@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+ app:
+   build:
+     context: .
+     dockerfile: Dockerfile.prod
+   volumes:
+     - ./src:/app/src
+     - ssl:/etc/letsencrypt
+   ports:
+     - "80:80"
+     
+volumes:
+ ssl:
+ 
